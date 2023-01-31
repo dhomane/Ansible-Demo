@@ -1,10 +1,8 @@
 ---
 - name: reboot machine
   hosts: all
+  become: yes
   tasks:
-          - name: reboot after 180 seconds
-            reboot:
-                    reboot_timeout: 180
 
           - name: quick reboot
             reboot:

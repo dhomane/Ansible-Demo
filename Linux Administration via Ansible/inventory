@@ -1,2 +1,6 @@
-[local]
-localhost
+#[local]
+#localhost
+
+[rhel]
+
+rhel9-mini.local
