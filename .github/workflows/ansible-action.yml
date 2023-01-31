@@ -33,7 +33,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           curl -fsSLo /tmp/hello-world.yaml https://raw.githubusercontent.com/dhomane/Ansible-Demo/master/playbooks/hello-world.yaml
-          echo Add other actions to build,
+          echo Add other actions to build
+          export ANSIBLE_HOST_KEY_CHECKING=False
           echo test, and deploy your project.
           
       - name: Run playbook
@@ -56,7 +57,7 @@ jobs:
             ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
           # Optional, SSH known hosts file content
-          #known_hosts: .known_hosts
+          known_hosts: ~/.ssh/known_hosts
           # Optional, encrypted vault password
           #vault_password: ${{secrets.VAULT_PASSWORD}}
           # Optional, galaxy requirements filepath
