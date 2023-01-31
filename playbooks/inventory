@@ -1,2 +1,7 @@
 [linux]
+129.153.176.208
 129.153.229.32
+
+
+[linux:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
