@@ -32,6 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          curl -fsSLo /tmp/hello-world.yaml https://raw.githubusercontent.com/dhomane/Ansible-Demo/master/playbooks/hello-world.yaml
           echo Add other actions to build,
           echo test, and deploy your project.
           
@@ -39,9 +40,9 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2.6.1
         with:
           # Required, playbook filepath
-          playbook: playbooks/hello-world.yaml
+          playbook: /tmp/hello-world.yaml
           # Optional, directory where playbooks live
-          directory: ./playbooks
+          #directory: ./playbooks
           # Optional, SSH private key
           key: ${{secrets.SSH_PRIVATE_KEY}}
           # Optional, literal inventory file contents
