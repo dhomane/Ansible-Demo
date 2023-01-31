@@ -50,8 +50,8 @@ jobs:
           inventory: |
 
             [linux]
-            129.153.176.208
-            129.153.229.32
+            129.153.176.208 ansible_connection=ssh ansible_ssh_user=ansible
+            129.153.229.32 ansible_connection=ssh ansible_ssh_user=ansible
 
             [linux:vars]
             ansible_ssh_common_args='-o StrictHostKeyChecking=no'
