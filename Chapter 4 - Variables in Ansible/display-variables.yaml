@@ -2,13 +2,19 @@
   hosts: localhost
   gather_facts: no
   vars:
+    foo: "bar"
     network:
       username: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
       password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
+ 
 
 
 
   tasks:
+  
+    - name: Display value of FOO variable
+      shell: echo "{{ foo }}"
+      
     - name: Display value of USER variable
       shell: echo "{{ username }}"
 
