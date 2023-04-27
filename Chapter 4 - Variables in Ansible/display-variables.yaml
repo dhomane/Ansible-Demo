@@ -4,10 +4,8 @@
 
   tasks:
     - name: Display value of USER variable
-      debug:
-        var: ansible_env.ANSIBLE_NET_USERNAME
+      shell: echo {{ lookup(env, "ANSIBLE_NET_USERNAME" }}
 
-    - name: Display value of PASS variable
-      debug:
-        var: ansible_env.ANSIBLE_NET_PASSWORD
+    - name: Display value of USER variable
+      shell: echo {{ lookup(env, "ANSIBLE_NET_PASSWORD" }}
     
