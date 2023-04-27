@@ -1,5 +1,5 @@
 - name: Display environment variables
-  hosts: localhost
+  hosts: all
   gather_facts: no
   vars:
     foo: "bar"
