@@ -1,0 +1,13 @@
+- name: Display environment variables
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Display value of USER variable
+      debug:
+        var: ansible_env.ANSIBLE_NET_USERNAME
+
+    - name: Display value of PASS variable
+      debug:
+        var: ansible_env.ANSIBLE_NET_PASSWORD
+    
