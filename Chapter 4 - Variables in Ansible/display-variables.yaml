@@ -4,8 +4,8 @@
 
   tasks:
     - name: Display value of USER variable
-      shell: echo "{{ lookup(env, "ANSIBLE_NET_USERNAME") }}"
+      shell: echo "{{ ANSIBLE_NET_USERNAME }}"
 
     - name: Display value of USER variable
-      shell: echo "{{ lookup(env, "ANSIBLE_NET_PASSWORD") }}"
+      shell: echo "{{ ANSIBLE_NET_PASSWORD }}"
     
