@@ -1,11 +1,17 @@
 - name: Display environment variables
   hosts: localhost
   gather_facts: no
+  vars:
+    network:
+      username: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
+
+
 
   tasks:
     - name: Display value of USER variable
-      shell: echo "{{ ANSIBLE_NET_USERNAME }}"
+      shell: echo "{{ username }}"
 
-    - name: Display value of USER variable
-      shell: echo "{{ ANSIBLE_NET_PASSWORD }}"
+    - name: Display value of PASS variable
+      shell: echo "{{ password }}"
     
