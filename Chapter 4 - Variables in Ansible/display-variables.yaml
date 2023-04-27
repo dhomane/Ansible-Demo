@@ -1,23 +1,11 @@
-- name: Display environment variables
+- name: Display Variables
   hosts: all
-  gather_facts: no
   vars:
-    foo: "bar"
     network:
       username: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
       password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
- 
-
-
-
-  tasks:
-  
-    - name: Display value of FOO variable
-      shell: echo "{{ foo }}"
       
-    - name: Display value of USER variable
-      shell: echo "{{ username }}"
-
-    - name: Display value of PASS variable
-      shell: echo "{{ password }}"
-    
+  tasks:
+    - name: Display network username and password
+      debug:
+        msg: "Username: {{ network.username }}, Password: {{ network.password }}"
